@@ -1,18 +1,62 @@
 {
   "v2": {
     "transposit": {
+      "dependencies": [{
+        "name": "transposit/airtable:v2.*.*",
+        "alias": "airtable"
+      }],
       "operations": [{
-        "id": "hello_world",
-        "description": "Returns \"Hello, world\" in different languages",
+        "id": "get_interviewer",
+        "tql": {
+          "parameters": [{
+            "name": "email",
+            "type": "STRING"
+          }, {
+            "name": "baseId",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId=@baseId\n  AND table='Interviewers'\n  AND fields.Email=@email\n  LIMIT 1"
+        }
+      }, {
+        "id": "get_applicants",
+        "tql": {
+          "parameters": [{
+            "name": "interviewerID",
+            "type": "STRING"
+          }, {
+            "name": "baseId",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM (SELECT * FROM airtable.get_records\n  WHERE baseId=@baseId\n  AND table='Applicants' EXPAND BY fields.`Onsite Interviewer` as interviewer, fields.`Applying for` as position)\n  WHERE interviewer = @interviewerID"
+        }
+      }, {
+        "id": "get_interviewer_applicants",
+        "description": "Get the applicants that the interviewer has access to. Join in Information about the interviewer and the position.",
+        "tql": {
+          "parameters": [{
+            "name": "email",
+            "type": "STRING"
+          }, {
+            "name": "baseId",
+            "type": "STRING"
+          }],
+          "tql": "SELECT {...A.fields, id: A.id} FROM this.get_applicants as A JOIN this.get_interviewer as I\n  ON A.interviewerID = I.id WHERE I.email = @email AND A.baseId=@baseId AND I.baseId=@baseId"
+        }
+      }, {
+        "id": "populate_applicant_info",
         "function": {
-          "js": "hello_world.js"
+          "parameters": [{
+            "name": "baseId",
+            "type": "STRING"
+          }],
+          "js": "populate_applicant_info.js"
         },
         "access": {
           "requireUser": true
         }
       }],
-      "javascriptAPIVersion": "3",
-      "source": "src"
-    }
+      "javascriptAPIVersion": "3"
+    },
+    "description": "Sample application based on the airtable applicant tracker template"
   }
 }
