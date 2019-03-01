@@ -57,6 +57,6 @@
       }],
       "javascriptAPIVersion": "3"
     },
-    "description": "Sample application based on the Airtable applicant tracker template"
+    "description": "Layer permissions on top of an Airtable applicant tracking base, allowing interviewers to see only specific information."
   }
 }
