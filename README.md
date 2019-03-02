@@ -25,7 +25,7 @@ Note: For testing purposes, set a the email of one of the interviewers to the Go
 
 ## Step through Transposit
 
-  * Fork the app [https://console.transposit.com/t/tina/applicant_tracker](https://console.transposit.com/t/tina/applicant_tracker) (find the Fork button at the top of the editor view)
+  * Fork the app [https://console.transposit.com/t/transposit-sample/applicant_tracker](https://console.transposit.com/t/transposit-sample/applicant_tracker) (find the Fork button at the top of the editor view)
   * Add your Airtable key
   * Note `get_logged_in_user_applicants` is the deployed operation. That's the operation your hosted application will call. Test the operation by adding the `baseId` and your email.
   * Go to the link for the hosted app, and see it work
