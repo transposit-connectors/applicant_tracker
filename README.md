@@ -14,7 +14,7 @@ Go to [the applicant tracking template](https://airtable.com/templates/professio
 
   * Select the applicant tracking base you just created.
   * Select the “Interviewers” table.
-  * Add a new column named `email` of type `Single line text`.
+  * Add a new column named `Email` (uppercase `E`) of type `Single line text`.
 
 Note: For testing purposes, set a the email of one of the interviewers to the Google account email you use with Transposit.
 
