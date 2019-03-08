@@ -40,7 +40,7 @@
             "name": "baseId",
             "type": "STRING"
           }],
-          "tql": "SELECT {...A.fields, id: A.id} FROM this.get_applicants as A JOIN this.get_interviewer as I\n  ON A.interviewerID = I.id WHERE I.email = @email AND A.baseId=@baseId AND I.baseId=@baseId\n  \n /*\n  * Note: While the Airtable field name is `Email`, the operation parameter in this.get_interviewer is named (lowercase) `email`.\n  * Thus, we use `I.email` to pass through the email parameter \n  */"
+          "tql": "SELECT {...A.fields, id: A.id} FROM this.get_applicants as A JOIN this.get_interviewer as I\n  ON A.interviewerID = I.id WHERE I.email = @email AND A.baseId=@baseId AND I.baseId=@baseId\n  \n/*\n * Note: While the Airtable field name is `Email`, the operation parameter in this.get_interviewer is named (lowercase) `email`.\n * Thus, we use `I.email` to pass through the email parameter \n */"
         }
       }, {
         "id": "populate_applicant_info",
