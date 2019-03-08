@@ -40,7 +40,7 @@
             "name": "baseId",
             "type": "STRING"
           }],
-          "tql": "SELECT {...A.fields, id: A.id} FROM this.get_applicants as A JOIN this.get_interviewer as I\n  ON A.interviewerID = I.id WHERE I.Email = @email AND A.baseId=@baseId AND I.baseId=@baseId"
+          "tql": "SELECT {...A.fields, id: A.id} FROM this.get_applicants as A JOIN this.get_interviewer as I\n  ON A.interviewerID = I.id WHERE I.email = @email AND A.baseId=@baseId AND I.baseId=@baseId"
         }
       }, {
         "id": "populate_applicant_info",

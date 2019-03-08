@@ -7,6 +7,8 @@
   api.run('airtable.get_records', {baseId: params.baseId, table: 'Interviewers'}).forEach((i) => {
     interviewers[i.id] = i;
   });
+  
+  api.log(interviewers);
 
   var positions = {};
   api.run('airtable.get_records', {baseId: params.baseId, table: 'Positions'}).forEach((p) => {
