@@ -15,7 +15,7 @@
             "name": "baseId",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId=@baseId\n  AND table='Interviewers'\n  AND fields.Email=@email\n  LIMIT 1"
+          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId=@baseId\n  AND table='Interviewers'\n  AND fields.email=@email\n  LIMIT 1"
         }
       }, {
         "id": "get_applicants",
