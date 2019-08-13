@@ -1,4 +1,12 @@
-# Airtable Applicant Tracker
+---
+layout: app_details.mustache
+title: Airtable Applicant Tracker
+summary: Layer permissions on top of an Airtable applicant tracking base, allowing interviewers to see only specific information.
+location: https://console.transposit.com/t/transposit-sample/applicant_tracker
+tags: 
+- airtable
+- 01_featured
+---
 
 Airtable has [a pre-built template](https://airtable.com/templates/professional/expksc99BziBsZRgR/applicant-tracking-system) for an applicant tracking base. One of the important requirements of an applicant tracker is limiting access around who can see feedback. In this case however, Airtable’s sharing model is designed around sharing access to the entire base.
 
