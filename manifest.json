@@ -57,6 +57,7 @@
       }],
       "javascriptAPIVersion": "3"
     },
-    "description": "Layer permissions on top of an Airtable applicant tracking base, allowing interviewers to see only specific information."
+    "description": "Layer permissions on top of an Airtable applicant tracking base, allowing interviewers to see only specific information.",
+    "displayName": "Airtable Applicant Tracker"
   }
 }
